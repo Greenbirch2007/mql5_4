@@ -85,7 +85,9 @@
 
 import random
 
-
+def remove_existfile(filename):
+    if os.path.exists(filename):
+        os.remove(filename)
 print()
 
 def choose_not_zero(list_content):

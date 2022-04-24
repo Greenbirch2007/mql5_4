@@ -33,7 +33,7 @@ def today_date():
 
 
 
-class Logger:
+class Logger():
     def __init__(self, name=__name__):
         self.logger = getLogger(name)
         self.logger.setLevel(DEBUG)
@@ -186,7 +186,7 @@ def big_dt_function():
     confirm_dt_13 = last_average - first_average_13
     confirm_dt_12 = last_average - first_average_12
     confirm_dt= choose_not_zero([confirm_dt_15,confirm_dt_14,confirm_dt_13,confirm_dt_12])
-    return confirm_dt
+    return confirm_dt,last_time
 def send_msg_to_sb(username,msg):
     users=itchat.search_friends(username)
     userName= users[0]['UserName']
@@ -199,34 +199,35 @@ def mkdir(path):
     isExists = os.path.exists(os.path.join(lpath,path))
     if not isExists:
         os.makedirs(path)
-
+def remove_existfile(filename):
+    if os.path.exists(filename):
+        os.remove(filename)
 if __name__:="__main__":
     mkdir("log")
     logpath= os.path.join(os.getcwd(),"log")
     log= Logger()
-
+    remove_existfile("put.txt")
+    remove_existfile("call.txt")
     # 登录并获得QR码
     itchat.login()
     # 通过手机扫描QR码登录的微信号给“文件传输助手”发送消息“您好”
 
     while True:
-        confirm_dt = big_dt_function()
+        confirm_dt,last_time = big_dt_function()
         time.sleep(random.choice((10,11,12,13,14,15)))
         print("-"*50,confirm_dt,"-"*50)
         if abs(confirm_dt) >= 80 and confirm_dt>0 and os.path.exists("call.txt") is False:
-            if os.path.exists("put.txt"):
-                os.remove('put.txt')
-            msg ="time: {1} \n 市场为 {0} ，考虑是否进场！".format(str(confirm_dt),datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+            remove_existfile("put.txt")
+            msg ="mt5 time :{2} \n time: {1} \n 市场为 {0} ，考虑是否进场！".format(str(confirm_dt),datetime.now().strftime("%Y-%m-%d %H:%M:%S"),last_time)
             # itchat.send("time: {1} \n 市场为 {0} ，考虑是否进场！".format(str(confirm_dt),datetime.now().strftime("%Y-%m-%d %H:%M:%S")),'filehelper')
             send_msg_to_sb("敂敂", msg)
             log.debug(msg)
 
             file_handle = open('call.txt', mode='w')
         if  abs(confirm_dt) >= 80 and confirm_dt<0 and os.path.exists("put.txt") is False:
-            if os.path.exists("call.txt"):
-                os.remove('call.txt')
+            remove_existfile("call.txt")
             # itchat.send("time: {1} \n 市场为 {0} ，考虑是否进场！".format(str(confirm_dt),datetime.now().strftime("%Y-%m-%d %H:%M:%S")),'filehelper')
-            msg = "time: {1} \n 市场为 {0} ，考虑是否进场！".format(str(confirm_dt), datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+            msg ="mt5 time :{2} \n time: {1} \n 市场为 {0} ，考虑是否进场！".format(str(confirm_dt),datetime.now().strftime("%Y-%m-%d %H:%M:%S"),last_time)
             send_msg_to_sb("敂敂", msg)
             log.debug(msg)
             file_handle = open('put.txt', mode='w')
