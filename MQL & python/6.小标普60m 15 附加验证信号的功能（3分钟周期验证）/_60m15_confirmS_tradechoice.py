@@ -451,7 +451,7 @@ def affirm_Signal(tradeone,basetime):
         print_and_sendmsg(msg2)
         print_and_sendmsg(msg3)
         print_and_sendmsg(msg4)
-        if false_count-true_count>40:
+        if abs(false_count)-abs(true_count)>40:
             msg5 = "总信号彻底失败！赶紧离场！"
             print_and_sendmsg(msg5)
             remove_file("txt")
