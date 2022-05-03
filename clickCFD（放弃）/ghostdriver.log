@@ -1,0 +1,22 @@
+[INFO  - 2022-05-02T11:34:37.650Z] GhostDriver - Main - running on port 4361
+[INFO  - 2022-05-02T11:34:42.133Z] Session [dbb49a20-ca0b-11ec-91a3-091a95b4add5] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2022-05-02T11:34:42.133Z] Session [dbb49a20-ca0b-11ec-91a3-091a95b4add5] - page.customHeaders:  - {}
+[INFO  - 2022-05-02T11:34:42.133Z] Session [dbb49a20-ca0b-11ec-91a3-091a95b4add5] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"windows-10-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2022-05-02T11:34:42.134Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: dbb49a20-ca0b-11ec-91a3-091a95b4add5
+[ERROR - 2022-05-02T11:34:44.477Z] Session [dbb49a20-ca0b-11ec-91a3-091a95b4add5] - page.onError - msg: TypeError: null is not an object (evaluating 'b.createDocumentFragment')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2022-05-02T11:34:44.478Z] Session [dbb49a20-ca0b-11ec-91a3-091a95b4add5] - page.onError - stack:
+  ui (https://www.google.com/cse/static/element/3e1664f444e6eb06/cse_element__ja.js?usqp=CAI%3D:163)
+  Jy (https://www.google.com/cse/static/element/3e1664f444e6eb06/cse_element__ja.js?usqp=CAI%3D:166)
+  Ta (https://www.google.com/cse/static/element/3e1664f444e6eb06/cse_element__ja.js?usqp=CAI%3D:165)
+  (anonymous function) (https://www.google.com/cse/static/element/3e1664f444e6eb06/cse_element__ja.js?usqp=CAI%3D:413)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2022-05-02T11:34:44.478Z] Session [dbb49a20-ca0b-11ec-91a3-091a95b4add5] - page.onError - msg: TypeError: undefined is not an object (evaluating 'google.search.cse')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2022-05-02T11:34:44.479Z] Session [dbb49a20-ca0b-11ec-91a3-091a95b4add5] - page.onError - stack:
+  scb (https://cse.google.com/cse.js?cx=003860041608208224226:ho5-7z-gtt8:10)
+
+  phantomjs://platform/console++.js:263 in error
