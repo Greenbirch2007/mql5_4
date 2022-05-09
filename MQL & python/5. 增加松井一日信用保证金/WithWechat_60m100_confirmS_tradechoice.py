@@ -23,6 +23,7 @@ import pandas as pd
 import pytz
 import requests
 from lxml import etree
+import pyautogui
 
 
 def confirm_reponsetext(response, encodings):
@@ -226,7 +227,7 @@ def big_dt_function(tradeone,key_paramter,basetime):
                                                                       last_time,tradeone,daily_margin)
         # itchat.send("time: {1} \n 市场为 {0} ，考虑是否进场！".format(str(confirm_dt),datetime.now().strftime("%Y-%m-%d %H:%M:%S")),'filehelper')
         send_msg_to_sb("敂敂", msg)
-        log.debug(msg)
+        
 
         open('call{0}.txt'.format(tradeone), mode='w')
     if abs(confirm_dt) >= key_paramter and confirm_dt < 0 and os.path.exists('put{0}.txt'.format(tradeone)) is False:
@@ -237,7 +238,7 @@ def big_dt_function(tradeone,key_paramter,basetime):
                                                                       datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                                                                       last_time,tradeone,daily_margin)
         send_msg_to_sb("敂敂", msg)
-        log.debug(msg)
+        
         open('put{0}.txt'.format(tradeone), mode='w')
 
 
@@ -249,7 +250,8 @@ def send_msg_to_sb(username,msg):
 
 def print_and_sendmsg(username, msg):
     send_msg_to_sb(username, msg)
-    log.debug(msg)
+    print(msg)
+    
 def mkdir(path):
     lpath=os.getcwd()
     isExists = os.path.exists(os.path.join(lpath,path))
@@ -479,16 +481,23 @@ if __name__=="__main__":
     itchat.login()
     # 通过手机扫描QR码登录的微信号给“文件传输助手”发送消息“您好”
     while True:
+        pyautogui.scroll(-100)  # 向下滚动10格
         if confirm_file_exist_or_not() is False:
             # 如果没有文件就搜集信号，加上睡眠，如果有信号了。就开始验证信号的有效性
             for item in trade_dict.keys():
                 big_dt_function(item, trade_dict[item], 60)
             time.sleep(random.choice((10, 11, 12, 13, 14, 15)))
+
+
+
         else:
             # 开始验证信号
             affirm_Signal("NI225", 10)
             print(true_list)
             print(false_list)
+
+
+
 
 
 

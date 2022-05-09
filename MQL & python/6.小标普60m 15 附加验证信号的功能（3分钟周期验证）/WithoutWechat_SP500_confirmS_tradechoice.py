@@ -518,8 +518,7 @@ if __name__=="__main__":
     # 开始时, 删除所有文本
     remove_file("txt")
     time.sleep(2)
-    FX_trade_dict = {'USDJPY': 0.5196, 'EURJPY': 0.7822, 'GBPJPY': 1.1856, 'AUDJPY': 0.7369, 'NZDJPY': 0.6955,
-                     'CADJPY': 0.6136}
+    FX_trade_dict = {'SP500m': 41}
     mkdir("log")
     true_list = []
     false_list = []
@@ -530,12 +529,8 @@ if __name__=="__main__":
 
     # 通过手机扫描QR码登录的微信号给“文件传输助手”发送消息“您好”
     while True:
-        final_("USDJPY")
-        final_("EURJPY")
-        final_("GBPJPY")
-        final_("AUDJPY")
-        final_("NZDJPY")
-        final_("CADJPY")
+        final_("SP500m")
+
         time.sleep(180)
         print("-"*99)
 

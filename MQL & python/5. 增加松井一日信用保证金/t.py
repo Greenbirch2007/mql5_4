@@ -4,7 +4,10 @@
 
 import pandas as pd
 
-l =[1,2,3,4,5,6]
+d = [{"a":1,"vlanid":100},{"a":1,"vlanid":101},{"a":1,"vlanid":102},{"a":1,"vlanid":103}]
+
+
+print([x for x in d if x["vlanid"]!=100])
 
 df = pd.DataFrame(l)
 
