@@ -512,7 +512,7 @@ def final_(tradeone):
     last_average, confirm_dt_60 = big_dt_function(tradeone, 60)
     confirm_dt_5 = affirm_Signal(tradeone)
     print(tradeone, float(confirm_dt_5), float(confirm_dt_60))
-    find_and_confirm_signal(tradeone, float(confirm_dt_5), float(confirm_dt_60), FX_trade_dict, 0.3, 0.1)
+    find_and_confirm_signal(tradeone, float(confirm_dt_5), float(confirm_dt_60), FX_trade_dict, 0.17, 0.1)
 
 if __name__=="__main__":
     # 开始时, 删除所有文本

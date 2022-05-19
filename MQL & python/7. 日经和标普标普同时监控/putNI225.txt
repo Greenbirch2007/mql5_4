@@ -1,6 +1,2 @@
-call,-30.0
+put,2.5
 call,-2.5
-put,7.5
-put,5.0
-put,10.0
-call,-12.5

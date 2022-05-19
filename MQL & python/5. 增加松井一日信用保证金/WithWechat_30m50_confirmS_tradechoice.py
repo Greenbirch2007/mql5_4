@@ -1,4 +1,6 @@
 
+
+
 # https://www.mql5.com/zh/docs/integration/python_metatrader5
 
 # 1. 取mt5数据 m60
@@ -21,7 +23,7 @@ import pandas as pd
 import pytz
 import requests
 from lxml import etree
-import pyautogui # 向下滚动10格
+import pyautogui
 
 
 def confirm_reponsetext(response, encodings):
@@ -82,8 +84,6 @@ class Logger():
         self.logger.addHandler(handler)
 
     def debug(self, msg):
-
-
         self.logger.debug(msg)
 
     def info(self, msg):
@@ -219,6 +219,8 @@ def big_dt_function(tradeone,key_paramter,basetime):
 
 
     print("-" * 60,"tradeone is ",tradeone, "data is :",confirm_dt, "-" * 60)
+    print(key_paramter)
+    time.sleep(1)
     if abs(confirm_dt) >= key_paramter and confirm_dt > 0 and os.path.exists('call{0}.txt'.format(tradeone)) is False:
         daily_margin = get_sj_dailymargin_info()
         remove_existfile("put{0}.txt".format(tradeone))
@@ -226,8 +228,8 @@ def big_dt_function(tradeone,key_paramter,basetime):
                                                                       datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                                                                       last_time,tradeone,daily_margin)
         # itchat.send("time: {1} \n 市场为 {0} ，考虑是否进场！".format(str(confirm_dt),datetime.now().strftime("%Y-%m-%d %H:%M:%S")),'filehelper')
-        print(msg)
-
+        send_msg_to_sb("敂敂", msg)
+        
 
         open('call{0}.txt'.format(tradeone), mode='w')
     if abs(confirm_dt) >= key_paramter and confirm_dt < 0 and os.path.exists('put{0}.txt'.format(tradeone)) is False:
@@ -237,16 +239,19 @@ def big_dt_function(tradeone,key_paramter,basetime):
         msg = "松井日内保证金为 {4} \ntradeone is {3} \n mt5 time :{2} \n time: {1} \n 市场为 {0} ，考虑是否进场！".format(str(confirm_dt),
                                                                       datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                                                                       last_time,tradeone,daily_margin)
-        print(msg)
+        send_msg_to_sb("敂敂", msg)
         
         open('put{0}.txt'.format(tradeone), mode='w')
 
 
 
+def send_msg_to_sb(username,msg):
+    users=itchat.search_friends(username)
+    itchat.send(msg,toUserName=users[0]['UserName'])
 
 
-
-def print_and_sendmsg(msg):
+def print_and_sendmsg(username, msg):
+    send_msg_to_sb(username, msg)
     print(msg)
     
 def mkdir(path):
@@ -408,13 +413,13 @@ def affirm_Signal(tradeone,basetime):
         msg2 = "判定信号 正确的数值为{0} ！".format(str(true_count))
         msg3 = "判定信号 错误的数值为{0} ！".format(str(false_count))
         msg4 = "判定信号 总计的数值为{0} ！".format(str(all_count))
-        print_and_sendmsg(msg1)
-        print_and_sendmsg(msg2)
-        print_and_sendmsg(msg3)
-        print_and_sendmsg(msg4)
+        print_and_sendmsg("敂敂", msg1)
+        print_and_sendmsg("敂敂", msg2)
+        print_and_sendmsg("敂敂", msg3)
+        print_and_sendmsg("敂敂", msg4)
         if all_count+40<0:
             msg5 = "做多的信号彻底失败！赶紧离场！"
-            print_and_sendmsg( msg5)
+            print_and_sendmsg("敂敂", msg5)
             remove_file("txt")
 
 
@@ -428,13 +433,13 @@ def affirm_Signal(tradeone,basetime):
         msg2 = "判定信号 正确的数值为{0} ！".format(str(true_count))
         msg3 = "判定信号 错误的数值为{0} ！".format(str(false_count))
         msg4 = "判定信号 总计的数值为{0} ！".format(str(all_count))
-        print_and_sendmsg( msg1)
-        print_and_sendmsg( msg2)
-        print_and_sendmsg( msg3)
-        print_and_sendmsg( msg4)
+        print_and_sendmsg("敂敂", msg1)
+        print_and_sendmsg("敂敂", msg2)
+        print_and_sendmsg("敂敂", msg3)
+        print_and_sendmsg("敂敂", msg4)
         if all_count-40>0:
             msg5 = "做空的信号彻底失败！赶紧离场！"
-            print_and_sendmsg( msg5)
+            print_and_sendmsg("敂敂", msg5)
             remove_file("txt")
 
     else:
@@ -447,13 +452,13 @@ def affirm_Signal(tradeone,basetime):
         msg2 = "判定信号 正确的数值为{0} ！".format(str(true_count))
         msg3 = "判定信号 错误的数值为{0} ！".format(str(false_count))
         msg4 = "判定信号 总计的数值为{0} ！".format(str(all_count))
-        print_and_sendmsg( msg1)
-        print_and_sendmsg( msg2)
-        print_and_sendmsg( msg3)
-        print_and_sendmsg( msg4)
+        print_and_sendmsg("敂敂", msg1)
+        print_and_sendmsg("敂敂", msg2)
+        print_and_sendmsg("敂敂", msg3)
+        print_and_sendmsg("敂敂", msg4)
         if abs(false_count)-abs(true_count)>40:
             msg5 = "总信号彻底失败！赶紧离场！"
-            print_and_sendmsg(msg5)
+            print_and_sendmsg("敂敂", msg5)
             remove_file("txt")
 
 
@@ -463,7 +468,7 @@ if __name__=="__main__":
     true_list = []
     false_list = []
     trade_dict = {
-        "NI225": 100
+        "NI225": 30
         #"SP500m": 60
         #"XAGUSD": 0.58
     }
@@ -474,14 +479,16 @@ if __name__=="__main__":
     logpath= os.path.join(os.getcwd(),"log")
     log= Logger()
 
+    # 登录并获得QR码
+    itchat.login()
     # 通过手机扫描QR码登录的微信号给“文件传输助手”发送消息“您好”
     while True:
         if confirm_file_exist_or_not() is False:
             # 如果没有文件就搜集信号，加上睡眠，如果有信号了。就开始验证信号的有效性
             for item in trade_dict.keys():
-                big_dt_function(item, trade_dict[item], 60)
+                big_dt_function(item, trade_dict[item], 30)
             time.sleep(random.choice((10, 11, 12, 13, 14, 15)))
-            pyautogui.scroll(-100)  # 向下滚动10格
+
 
 
         else:
@@ -489,7 +496,17 @@ if __name__=="__main__":
             affirm_Signal("NI225", 10)
             print(true_list)
             print(false_list)
-            pyautogui.scroll(-100)  # 向下滚动10格
+
+
+
+
+
+
+
+
+
+
+
 
 
 

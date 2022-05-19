@@ -1,20 +1,16 @@
 
 
-import os
-
-def remove_existfile(filename):
-    if os.path.exists(filename):
-        os.remove(filename)
 
 
-# trade_choice = ["NI225", "SP500m", "XAGUSD"]
-# remove_existfile("call{0}.txt".format(x for x in trade_choice))
-# remove_existfile("put{0}.txt".format(x for x in trade_choice))
-#
-# pip install pandas pytz
+def bee():
+    import ctypes
+    player = ctypes.windll.kernel32
+    player.Beep(1000, 200)
+
+    import time
+    for i in range(8):
+        time.sleep(1)
+        player.Beep(1000, 200)
 
 
-
-
-for  i in trade_dict.keys():
-    print(trade_dict[i])
+bee()
