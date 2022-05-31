@@ -1,15 +1,4 @@
 
-# https://www.mql5.com/zh/docs/integration/python_metatrader5
-
-# 1. 取mt5数据 m60
-# 2. 每10秒测试一次，close-open 大于80 ，就发送信号
-# 3. 云服务器向手机微信发送通知
-# Greenbirch6007
-# NDUEg49ypandas
-# 1. 60分钟超80点，通知微信 Nikkei225
-# 2. 60分钟超60点，通知微信sp500
-# 3. 60分钟超0.58点，通知微信sh_ag
-
 import time
 import random
 from datetime import datetime
@@ -22,7 +11,45 @@ import pytz
 import requests
 from lxml import etree
 import pyautogui # 向下滚动10格
+#! -*- utf-8 -*-
 
+from itertools import chain
+import pymysql
+from queue import Queue
+import threading
+import time
+
+from lxml import etree
+
+# selenium 3.12.0
+from selenium.webdriver import PhantomJS
+
+
+
+
+
+def test_M_temp():
+    url = "http://quote.eastmoney.com/gb/zsN225.html"
+    ch_options = PhantomJS("C:\\Python310\\Scripts\\phantomjs.exe")  # windows
+    ch_options.get(url)
+    html = ch_options.page_source
+    ch_options.close()
+    selector = etree.HTML(html)
+    last_price = selector.xpath('//*[@id="app"]/div/div/div[7]/div[1]/div[1]/span[1]/span/text()')
+    yest_close_price = selector.xpath('//*[@id="app"]/div/div/div[7]/div[2]/ul[1]/li[2]/span[2]/span/text()')
+    max_price = selector.xpath('//*[@id="app"]/div/div/div[7]/div[2]/ul[1]/li[3]/span[2]/span/text()')
+    min_price = selector.xpath('//*[@id="app"]/div/div/div[7]/div[2]/ul[1]/li[4]/span[2]/span/text()')
+
+    max_min = float(max_price[0]) -float(min_price[0])
+    max_yest_close_price = float(max_price[0]) -float(yest_close_price[0])
+    min_yest_close_price = float(min_price[0]) -float(yest_close_price[0])
+    last_yest_close_price = float(last_price[0]) -float(yest_close_price[0])
+    print("max_min---->",max_min)
+    print("max_yest_close_price---->",max_yest_close_price)
+    print("min_yest_close_price---->",min_yest_close_price)
+    print("last_yest_close_price---->",last_yest_close_price)
+    if abs(last_yest_close_price) >=50:
+        print("---->  注意！目前走势是十字星！考虑是否进场 <-----")
 
 def confirm_reponsetext(response, encodings):
     if encodings != []:
@@ -229,15 +256,15 @@ def big_dt_function(tradeone,key_paramter,basetime):
 
 
     print("-" * 60,datetime.now().strftime("%H:%M:%S"),"tradeone is ",tradeone, "data is :",confirm_dt, "-" * 60)
-    time.sleep(1)
+
     if abs(confirm_dt) >= key_paramter and confirm_dt > 0 and os.path.exists('call{0}.txt'.format(tradeone)) is False:
         daily_margin = get_sj_dailymargin_info()
         remove_existfile("put{0}.txt".format(tradeone))
         msg = "松井日内保证金为 {4} \ntradeone is {3} \n mt5 time :{2} \n time: {1} \n 市场为 {0} ，考虑是否进场！".format(str(confirm_dt),
                                                                       datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                                                                       last_time,tradeone,daily_margin)
-        # itchat.send("time: {1} \n 市场为 {0} ，考虑是否进场！".format(str(confirm_dt),datetime.now().strftime("%Y-%m-%d %H:%M:%S")),'filehelper')
         print(msg)
+
         bee()
 
 
@@ -250,7 +277,8 @@ def big_dt_function(tradeone,key_paramter,basetime):
                                                                       datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                                                                       last_time,tradeone,daily_margin)
         print(msg)
-        
+
+
         open('put{0}.txt'.format(tradeone), mode='w')
         bee()
 
@@ -427,6 +455,7 @@ def affirm_Signal(tradeone,basetime):
         print_and_sendmsg(msg2)
         print_and_sendmsg(msg3)
         print_and_sendmsg(msg4)
+
         if all_count+40<0:
             msg5 = "做多的信号彻底失败！赶紧离场！"
             print_and_sendmsg( msg5)
@@ -451,6 +480,7 @@ def affirm_Signal(tradeone,basetime):
         print_and_sendmsg( msg2)
         print_and_sendmsg( msg3)
         print_and_sendmsg( msg4)
+
         if all_count-40>0:
             msg5 = "做空的信号彻底失败！赶紧离场！"
             print_and_sendmsg( msg5)
@@ -474,6 +504,7 @@ def affirm_Signal(tradeone,basetime):
         print_and_sendmsg( msg2)
         print_and_sendmsg( msg3)
         print_and_sendmsg( msg4)
+
         if abs(false_count)-abs(true_count)>40:
             msg5 = "总信号彻底失败！赶紧离场！"
             print_and_sendmsg(msg5)
@@ -500,10 +531,11 @@ if __name__=="__main__":
 
     # 通过手机扫描QR码登录的微信号给“文件传输助手”发送消息“您好”
     while True:
+
         if confirm_file_exist_or_not() is False:
             # 如果没有文件就搜集信号，加上睡眠，如果有信号了。就开始验证信号的有效性
             for item in trade_dict.keys():
-                big_dt_function(item, trade_dict[item], 30)
+                big_dt_function(item, trade_dict[item], 10)
             time.sleep(random.choice((10, 11, 12, 13, 14, 15)))
 
 

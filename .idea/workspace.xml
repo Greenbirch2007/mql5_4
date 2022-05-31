@@ -2,16 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8a613b2-51e2-40c7-b3f7-821c635853e1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/外汇街每天三星新闻整理/FXStreet_news.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MQL &amp; python/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MQL &amp; python/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MQL &amp; python/2. 整合3标的同时监控/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/MQL &amp; python/2. 整合3标的同时监控/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MQL &amp; python/5. 增加松井一日信用保证金/WithWechat_60m100_confirmS_tradechoice.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MQL &amp; python/5. 增加松井一日信用保证金/WithoutWechat_60m100_confirmS_tradechoice.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MQL &amp; python/5. 增加松井一日信用保证金/t.py" beforeDir="false" afterPath="$PROJECT_DIR$/MQL &amp; python/5. 增加松井一日信用保证金/t.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MQL &amp; python/7. 日经和标普标普同时监控/WithoutWechat_SPPlusNikki_confirmS_tradechoice.py" beforeDir="false" afterPath="$PROJECT_DIR$/MQL &amp; python/7. 日经和标普标普同时监控/WithoutWechat_SPPlusNikki_confirmS_tradechoice.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MQL &amp; python/7. 日经和标普标普同时监控/putNI225.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MQL &amp; python/7. 日经和标普标普同时监控/putNI225.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MQL &amp; python/7. 日经和标普标普同时监控/putSP500m.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MQL &amp; python/7. 日经和标普标普同时监控/putSP500m.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MQL &amp; python/5. 增加松井一日信用保证金/WithoutWechat_30m35_confirmS_tradechoice.py" beforeDir="false" afterPath="$PROJECT_DIR$/MQL &amp; python/5. 增加松井一日信用保证金/WithoutWechat_30m35_confirmS_tradechoice.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MQL &amp; python/5. 增加松井一日信用保证金/callNI225.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/外汇街每天三星新闻整理/FXStreet_news.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/外汇街每天三星新闻整理/ghostdriver.log" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,16 +33,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/mql5_4&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Trust_trade",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
-  <component name="RunManager" selected="Python.WithoutWechat_30m35_confirmS_tradechoice">
-    <configuration name="FXStreet_news" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+}]]></component>
+  <component name="RunManager" selected="Python.FXStreet_news (1)">
+    <configuration name="EAST2_9" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="mql5_4" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -54,11 +50,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/外汇街每天三星新闻整理" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/日经和标普时间段波动率分析" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/外汇街每天三星新闻整理/FXStreet_news.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/日经和标普时间段波动率分析/EAST2_9.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -67,7 +63,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="WithoutWechat_30m30_confirmS_tradechoice" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="EAST2_9_NIKKI" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="mql5_4" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -75,11 +71,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MQL &amp; python/5. 增加松井一日信用保证金" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/日经和标普时间段波动率分析/日经" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MQL &amp; python/5. 增加松井一日信用保证金/WithoutWechat_30m30_confirmS_tradechoice.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/日经和标普时间段波动率分析/日经/EAST2_9_NIKKI.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -88,7 +84,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="WithoutWechat_30m35_confirmS_tradechoice" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="EAST2_9_SP (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="mql5_4" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -96,11 +92,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MQL &amp; python/5. 增加松井一日信用保证金" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/日经和标普时间段波动率分析/SP" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MQL &amp; python/5. 增加松井一日信用保证金/WithoutWechat_30m35_confirmS_tradechoice.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/日经和标普时间段波动率分析/SP/EAST2_9_SP.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -109,7 +105,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="t" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="EAST2_9_SP" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="mql5_4" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -117,11 +113,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MQL &amp; python/5. 增加松井一日信用保证金" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/日经和标普时间段波动率分析" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MQL &amp; python/5. 增加松井一日信用保证金/t.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/日经和标普时间段波动率分析/EAST2_9_SP.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -130,7 +126,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="FXStreet_news (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="mql5_4" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -138,11 +134,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MQL &amp; python/2. 整合3标的同时监控" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/外汇街每天新闻整理" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MQL &amp; python/2. 整合3标的同时监控/test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/外汇街每天新闻整理/FXStreet_news.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -153,11 +149,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.WithoutWechat_30m35_confirmS_tradechoice" />
-        <item itemvalue="Python.FXStreet_news" />
-        <item itemvalue="Python.t" />
-        <item itemvalue="Python.test" />
-        <item itemvalue="Python.WithoutWechat_30m30_confirmS_tradechoice" />
+        <item itemvalue="Python.FXStreet_news (1)" />
+        <item itemvalue="Python.EAST2_9_SP (1)" />
+        <item itemvalue="Python.EAST2_9_NIKKI" />
+        <item itemvalue="Python.EAST2_9_SP" />
+        <item itemvalue="Python.EAST2_9" />
       </list>
     </recent_temporary>
   </component>

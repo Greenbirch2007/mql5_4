@@ -11,7 +11,7 @@ def use_selenium_headless_getdt(url):
     ch_options = PhantomJS("C:\\Python310\\Scripts\\phantomjs.exe") # windows
     # ch_options = PhantomJS() #linux
     ch_options.get(url)
-    time.sleep(3)
+    time.sleep(10)
     html = ch_options.page_source
     ch_options.close()
     return html
@@ -34,10 +34,13 @@ if __name__=="__main__":
     time_ = selector.xpath('//*[@id="fxst-calendartable"]/tbody/tr/td[1]/text()')
     country = selector.xpath('//*[@id="fxst-calendartable"]/tbody/tr/td[4]/text()')
     event = selector.xpath('//*[@id="fxst-calendartable"]/tbody/tr/td[5]/a/text()')
-    f_time = [x for x in time_ if "星期" not in time_]
+    f_time = [x for x in time_ if "星期"  in time_]
+    print("\n")
+    print("\n")
     for i1, i2, i3, i4 in zip(rank, f_time, country, event):
         if i1 == "3":
-            print(i1, i2, i3, i4)
+            print("                      ",i1, i2, i3, i4)
+            print("\n")
 
 
 
