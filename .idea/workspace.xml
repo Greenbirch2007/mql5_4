@@ -2,12 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8a613b2-51e2-40c7-b3f7-821c635853e1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MQL &amp; python/5. 增加松井一日信用保证金/WithoutWechat_30m35_confirmS_tradechoice.py" beforeDir="false" afterPath="$PROJECT_DIR$/MQL &amp; python/5. 增加松井一日信用保证金/WithoutWechat_30m35_confirmS_tradechoice.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MQL &amp; python/5. 增加松井一日信用保证金/callNI225.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/外汇街每天三星新闻整理/FXStreet_news.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/外汇街每天三星新闻整理/ghostdriver.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MQL &amp; python/8.十字星日内判定/ghostdriver.log" beforeDir="false" afterPath="$PROJECT_DIR$/MQL &amp; python/8.十字星日内判定/ghostdriver.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/日经和标普时间段波动率分析/日经/1-00-00-2-00-00.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/日经和标普时间段波动率分析/日经/19-30-00-20-30-00.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/日经和标普时间段波动率分析/日经/2-00-00-3-00-00.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/日经和标普时间段波动率分析/日经/20-30-00-21-30-00.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/日经和标普时间段波动率分析/日经/21-30-00-22-30-00.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/日经和标普时间段波动率分析/日经/22-30-00-23-30-00.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/日经和标普时间段波动率分析/日经/3-00-00-4-00-00.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/日经和标普时间段波动率分析/日经/4-00-00-5-00-00.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/日经和标普时间段波动率分析/日经/NI225_M30_202009231430_202205272230.csv" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +42,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Trust_trade",
+    "last_opened_file_path": "C:/mql5_4/MQL & python",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
