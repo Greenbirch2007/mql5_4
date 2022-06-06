@@ -72,6 +72,8 @@ def compare_two_list(start_list,end_list):
     one_trade = {}
     one_trade["开始时间"] = start_list[-1]
     one_trade["平仓时间"] =end_list[-1]
+    one_trade["开仓价格"] =start_list[2]
+    one_trade["平仓价格"] =end_list[2]
     one_trade["单次交易结果"] =trade_result
     one_trade["单次交易方向"] =trade_staus
     one_trade["单次交易结果金额"] =result_money
@@ -81,6 +83,7 @@ def compare_two_list(start_list,end_list):
 
 
 for i1,i2 in zip(start_list,end_list):
+    print(i1,i2)
     compare_two_list(i1,i2)
 
 
