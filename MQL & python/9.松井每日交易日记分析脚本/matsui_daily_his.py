@@ -101,4 +101,5 @@ f_list["总盈利金额"]=sum(true_trade_money)
 f_list["总亏损金额"]=sum(false_trade_money)
 f_list["交易明细"]= everytime_trade_info
 filename = datetime.datetime.now().strftime('%Y-%m-%d')
-writeinto_jsonfile("t-{0}.json".format(filename), f_list)
+total_trade_money = sum(true_trade_money)+sum(false_trade_money)
+writeinto_jsonfile("{1}-t-{0}.json".format(filename,str(total_trade_money)), f_list)
