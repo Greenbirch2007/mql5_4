@@ -425,7 +425,7 @@ def test_market_temperature(tradeone, basetime):
     now_ = datetime.now().strftime("%H:%M:%S")
 
 
-    if confirm_dt<=50:
+    if abs(confirm_dt)<=50:
         print("-|-" * 50)
         msg1 = "近--{0}小时--内水温太低了--->波动点数:{1},别进场市场!".format(str(int(basetime/60)),confirm_dt)
         print_and_sendmsg(msg1)
