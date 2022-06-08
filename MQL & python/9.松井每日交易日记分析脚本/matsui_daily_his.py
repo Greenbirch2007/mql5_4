@@ -1,12 +1,5 @@
 
 
-# 1.总开始时间，结束时间，总交易次数，盈利次数，止损次数 ，盈利总金额，止损总金额
-# 2. 每笔交易 开始时间，结束时间，盈亏状况，盈亏金额，买卖方向
-# 3
-#
-#
-#
-#
 import pandas as pd
 import datetime
 import json
@@ -41,12 +34,15 @@ total_trade_times = len(start_time)
 true_trade_money = []
 false_trade_money = []
 everytime_trade_info  = []
-
+breakevenlist=[]
 f_list ={}
 
 
 
 def compare_two_list(start_list,end_list):
+    trade_result =None
+    trade_staus =None
+    result_money =None
     if  start_list[1] == '買'and int(start_list[2]) > int(end_list[2]):
         trade_result = "止损"
         trade_staus = start_list[1]
@@ -69,15 +65,25 @@ def compare_two_list(start_list,end_list):
         trade_staus = start_list[1]
         result_money = int(start_list[2]) - int(end_list[2])
         false_trade_money.append(result_money)
-    one_trade = {}
-    one_trade["开始时间"] = start_list[-1]
-    one_trade["平仓时间"] =end_list[-1]
-    one_trade["开仓价格"] =start_list[2]
-    one_trade["平仓价格"] =end_list[2]
-    one_trade["单次交易结果"] =trade_result
-    one_trade["单次交易方向"] =trade_staus
-    one_trade["单次交易结果金额"] =result_money
-    everytime_trade_info.append(one_trade)
+    if int(start_list[2]) == int(end_list[2]):
+        one_trade = {}
+        one_trade["开始时间"] = start_list[-1]
+        one_trade["平仓时间"] = end_list[-1]
+        one_trade["开仓价格"] = start_list[2]
+        one_trade["平仓价格"] = end_list[2]
+        breakevenlist.append(one_trade)
+
+    else:
+
+        one_trade = {}
+        one_trade["开始时间"] = start_list[-1]
+        one_trade["平仓时间"] =end_list[-1]
+        one_trade["开仓价格"] =start_list[2]
+        one_trade["平仓价格"] =end_list[2]
+        one_trade["单次交易结果"] =trade_result
+        one_trade["单次交易方向"] =trade_staus
+        one_trade["单次交易结果金额"] =result_money
+        everytime_trade_info.append(one_trade)
 
 
 
@@ -94,12 +100,14 @@ def writeinto_jsonfile(filename,list_data):
 
 f_list["总开始时间"]=start_time
 f_list["总结束时间"]=end_time
-f_list["总交易所次数"]= len(true_trade_money)+len(false_trade_money)
+f_list["总交易所次数"]= len(true_trade_money)+len(false_trade_money)+len(breakevenlist)
+f_list["盈亏平衡次数"]= len(breakevenlist)
 f_list["总盈利次数"]= len(true_trade_money)
 f_list["总亏损次数"]= len(false_trade_money)
 f_list["总盈利金额"]=sum(true_trade_money)
 f_list["总亏损金额"]=sum(false_trade_money)
-f_list["交易明细"]= everytime_trade_info
+f_list["一般盈亏明细"]= everytime_trade_info
+f_list["盈亏平衡平衡明细"]= breakevenlist
 filename = datetime.datetime.now().strftime('%Y-%m-%d')
 total_trade_money = sum(true_trade_money)+sum(false_trade_money)
 writeinto_jsonfile("{1}-{2}-{3}-t-{0}.json".format(filename,str(total_trade_money),"".join(str(start_time).split(":")),"".join(str(end_time).split(":"))), f_list)
